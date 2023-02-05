@@ -1,23 +1,18 @@
 {
-  "name": "local-tree-service",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "// We need to define a `build` script, otherwise Vercel ignores the static files living at `dist/client/`": "",
+    "build": "echo 'I will never be called because the `vercel-build` script supersedes me'",
+    "// We need to run the entire build in `vercel-build` instead of `build` so that Vercel keeps the `dist/` directory in production (Vercel discards all files generated during the `build` script.)": "",
+    "vercel-build": "vite build",
+    "// For increased dev speed we use the Vite dev server instead of `vercel dev`": "",
+    "dev": "vite"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cboydstun/local-tree-service.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cboydstun/local-tree-service/issues"
-  },
-  "homepage": "https://github.com/cboydstun/local-tree-service#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "@vitejs/plugin-vue": "^1.10.1",
+    "@vue/compiler-sfc": "^3.2.24",
+    "@vue/server-renderer": "^3.2.24",
+    "vite": "^2.9.14",
+    "vite-plugin-ssr": "0.4.5",
+    "vue": "^3.2.24"
   }
 }
